@@ -54,6 +54,45 @@
 			<artifactId>spring-boot-starter-test</artifactId>
 			<scope>test</scope>
 		</dependency>
+
+<!-- Those two dependencies you listed are not related to reactive programming at all.
+They are specifically for MapStruct, which is a Java bean mapping library (used to map DTOs 
+↔ Entities without writing boilerplate code). -->
+
+<!-- ModelMapper (another library) → Works at runtime using reflection. Slower, but zero boilerplate.
+
+MapStruct → Works at compile-time (annotation processor). Very fast at runtime, since the code is
+ plain Java generated in advance.
+
+That’s why MapStruct needs both mapstruct and mapstruct-processor, while ModelMapper usually needs
+ just one dependency. -->
+
+
+
+ <!-- So, in reactive programming or normal Spring Boot apps, MapStruct is used when you want fast and
+  type-safe mappings, while ModelMapper is for quick setup but slower performance.
+
+Do you want me to show you a side-by-side example of using ModelMapper vs MapStruct with the same
+ DTO ↔ Entity mapping? -->
+		   <dependency>
+      <groupId>org.mapstruct</groupId>
+      <artifactId>mapstruct</artifactId>
+      <version>1.5.3.Final</version>
+   </dependency>
+
+
+   <dependency>
+      <groupId>org.mapstruct</groupId>
+      <artifactId>mapstruct-processor</artifactId>
+      <version>1.5.3.Final</version>
+   </dependency>
+   <!--  -->
+
+		<dependency>
+    <groupId>org.springframework.boot</groupId>
+    <artifactId>spring-boot-starter-webflux</artifactId>
+    <version>3.0.5</version>
+</dependency>
 	</dependencies>
 
 	<build>
