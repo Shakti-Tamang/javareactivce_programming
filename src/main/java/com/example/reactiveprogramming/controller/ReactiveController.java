@@ -1,10 +1,14 @@
 package com.example.reactiveprogramming.controller;
 
 
+import org.springframework.http.HttpStatus;
+import org.springframework.http.ResponseEntity;
 import org.springframework.validation.annotation.Validated;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
+import com.example.reactiveprogramming.apiresponse.ApiResponse;
+import com.example.reactiveprogramming.model.Student;
 import com.example.reactiveprogramming.service.Reactive;
 
 import lombok.AllArgsConstructor;
@@ -21,10 +25,18 @@ public class ReactiveController   {
     // practice
 
     private final Reactive reactive;
+
+
     @PostMapping("/saveDetails")
-    public String postMethodName(@RequestBody String entity) {
-        
-        return entity;
+    public ResponseEntity<ApiResponse> postMethodName(@RequestBody Student entity) {
+
+
+        reactive.saveDeatils(entity);
+
+        ApiResponse  apiResponse =ApiResponse.builder().messsage("success").statusCode(HttpStatus.OK.value()).build();
+
+
+        return ResponseEntity.status(HttpStatus.OK).body(apiResponse);
     }
     
 
