@@ -25,20 +25,11 @@ public class ReactiveController   {
     // practice
 
     private final Reactive reactive;
-
-
     @PostMapping("/saveDetails")
     public ResponseEntity<ApiResponse> postMethodName(@RequestBody Student entity) {
-
-
         reactive.saveDeatils(entity);
-
         ApiResponse  apiResponse =ApiResponse.builder().messsage("success").statusCode(HttpStatus.OK.value()).build();
-
-
         return ResponseEntity.status(HttpStatus.OK).body(apiResponse);
     }
-    
-
 
 }
