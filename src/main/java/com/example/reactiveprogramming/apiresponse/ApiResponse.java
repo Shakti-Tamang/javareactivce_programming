@@ -13,6 +13,9 @@ import lombok.NoArgsConstructor;
 @AllArgsConstructor
 @NoArgsConstructor
 public class ApiResponse<T> {
+
+   // Jackson (the serializer Spring Boot uses) converts LocalDateTime into a string by
+   //  default using the ISO-8601 format:
    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty("message")
     private String messsage;
@@ -56,7 +59,7 @@ public class ApiResponse<T> {
     @JsonProperty("userId")
     private Integer userId;
 
-       @JsonInclude(JsonInclude.Include.NON_NULL)
+     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty("unitPrice")
     private Float unitPrice;
     

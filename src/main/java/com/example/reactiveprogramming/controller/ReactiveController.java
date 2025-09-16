@@ -13,6 +13,7 @@ import com.example.reactiveprogramming.service.Reactive;
 
 import lombok.AllArgsConstructor;
 import lombok.RequiredArgsConstructor;
+import reactor.core.publisher.Flux;
 
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
@@ -23,13 +24,12 @@ import org.springframework.web.bind.annotation.RequestBody;
 @RequiredArgsConstructor
 public class ReactiveController   {
     // practice
-
     private final Reactive reactive;
     @PostMapping("/saveDetails")
-    public ResponseEntity<ApiResponse> postMethodName(@RequestBody Student entity) {
+    public Flux<ApiResponse> postDeatils(@RequestBody Student entity) {
         reactive.saveDeatils(entity);
         ApiResponse  apiResponse =ApiResponse.builder().messsage("success").statusCode(HttpStatus.OK.value()).build();
-        return ResponseEntity.status(HttpStatus.OK).body(apiResponse);
+        return Flux.just(apiResponse);
     }
 
 }
