@@ -63,7 +63,6 @@ public class SpringHierarchy {
 //    ↓
 // Beans (managed with defined scopes)
 
-
 // Would you like me to also give a real-world analogy (like a factory + workers example) to connect these concepts to daily life?
 
 }
