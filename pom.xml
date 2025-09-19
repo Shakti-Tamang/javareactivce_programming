@@ -80,6 +80,11 @@ Do you want me to show you a side-by-side example of using ModelMapper vs MapStr
       <version>1.5.3.Final</version>
    </dependency>
 
+<dependency>
+   <groupId>org.springdoc</groupId>
+   <artifactId>springdoc-openapi-starter-webmvc-ui</artifactId>
+   <version>2.0.2</version>
+</dependency>
 
    <dependency>
       <groupId>org.mapstruct</groupId>
