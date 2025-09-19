@@ -27,6 +27,9 @@ public class ReactiveController   {
         reactive.saveDeatils(entity);
         ApiResponse  apiResponse =ApiResponse.builder().messsage("success").statusCode(HttpStatus.OK.value()).build();
         return Flux.just(apiResponse);
-    }
+    }    
+
     
+
+
 }
