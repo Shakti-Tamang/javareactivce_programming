@@ -31,7 +31,6 @@ public class RecativeServiceImpl implements Reactive {
        int b=8;
 
     //    String result=(a>b)?"a is greater":"b is greater";
-
        return list.isEmpty()? new ArrayList<>():list;
     }
 
