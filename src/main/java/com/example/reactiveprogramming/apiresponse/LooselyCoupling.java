@@ -1,9 +1,7 @@
 package com.example.reactiveprogramming.apiresponse;
 
 import javax.swing.Spring;
-
 import org.apache.catalina.Engine;
-
 import reactor.core.publisher.Sinks.One;
 
 public class LooselyCoupling {
@@ -54,8 +52,6 @@ public class LooselyCoupling {
 //         System.out.println("Car is moving...");
 //     }
 // }
-
-
 // Car doesn’t know whether it has a PetrolEngine or DieselEngine.
 
 // It just depends on the interface (Engine).
@@ -142,6 +138,6 @@ public class LooselyCoupling {
 
 // 👉 Here, CheckoutService doesn’t care which payment gateway is used — IoC container injects the right one.
 
-// Would you like me to draw a real diagram (visual flow) showing Tight Coupling vs Loose Coupling in Spring?
+// Would you like me to   draw a real diagram (visual flow) showing Tight Coupling vs Loose Coupling in Spring?
 
 }

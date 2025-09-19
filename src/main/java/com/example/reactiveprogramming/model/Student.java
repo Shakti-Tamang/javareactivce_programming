@@ -1,5 +1,7 @@
 package com.example.reactiveprogramming.model;
 
+import java.io.Serializable;
+
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
@@ -19,7 +21,7 @@ import lombok.Setter;
 @NoArgsConstructor
 @Builder
 @Entity(name = "student")
-public class Student {
+public class Student  implements Serializable {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Id
     int id;
@@ -37,6 +39,4 @@ public class Student {
     String password;
 
     
-
-
 }
