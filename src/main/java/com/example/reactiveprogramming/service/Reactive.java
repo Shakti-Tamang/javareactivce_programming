@@ -4,10 +4,12 @@ import java.util.List;
 
 import com.example.reactiveprogramming.model.Student;
 
+import reactor.core.publisher.Flux;
+
 public interface Reactive {
 
     public void saveDeatils(Student student);
 
-    public List<Student> getAllDetails();
+    public Flux<Student> getAllDetails();
 
 }

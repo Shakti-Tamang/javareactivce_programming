@@ -35,7 +35,7 @@ public class ReactiveController   {
     
     @GetMapping("/getAllDetails")
     public Flux<ApiResponse> getAllDetails() {
-      List<Student> list=  reactive.getAllDetails();
+      Flux<Student> list=  reactive.getAllDetails();
         ApiResponse  apiResponse =ApiResponse.<Student>builder().messsage("success").statusCode(HttpStatus.OK.value()).listData(list).build();
         return Flux.just(apiResponse);
     }
