@@ -7,7 +7,7 @@ import org.springframework.scheduling.annotation.EnableAsync;
 
 @SpringBootApplication
 @EnableAsync
-@EnableAspectJAutoProxy(proxyTargetClass = true)
+// @EnableAspectJAutoProxy(proxyTargetClass = true)
 public class ReactiveprogrammingApplication {
 		public static void main(String[] args) {
 		SpringApplication.run(ReactiveprogrammingApplication.class, args);

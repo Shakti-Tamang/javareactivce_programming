@@ -7,6 +7,7 @@ import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
+import reactor.core.publisher.Flux;
 
 @Builder
 @Data
@@ -30,7 +31,7 @@ public class ApiResponse<T> {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty("ListData")
-    private List<T> listData;
+    private Flux<T> listData;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty("AccessToken")
