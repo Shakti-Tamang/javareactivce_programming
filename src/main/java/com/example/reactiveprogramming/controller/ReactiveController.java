@@ -14,6 +14,7 @@ import com.example.reactiveprogramming.service.Reactive;
 import lombok.AllArgsConstructor;
 import lombok.RequiredArgsConstructor;
 import reactor.core.publisher.Flux;
+import reactor.core.publisher.Mono;
 
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
@@ -34,10 +35,15 @@ public class ReactiveController   {
     }   
     
     @GetMapping("/getAllDetails")
-    public Flux<ApiResponse> getAllDetails() {
-      Flux<Student> list=  reactive.getAllDetails();
-        ApiResponse  apiResponse =ApiResponse.<Student>builder().messsage("success").statusCode(HttpStatus.OK.value()).listData(list).build();
-        return Flux.just(apiResponse);
+    public Mono<ApiResponse> getAllDetails() {
+    return reactive.getAllDetails()
+        .collectList() 
+        .map(list -> ApiResponse.<Student>builder()
+            .messsage("success")
+            .statusCode(HttpStatus.OK.value())
+            .listData(list)   
+            .build()
+        );
     }
 
 

@@ -31,7 +31,7 @@ public class ApiResponse<T> {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty("ListData")
-    private Flux<T> listData;
+    private List<T> listData;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty("AccessToken")
