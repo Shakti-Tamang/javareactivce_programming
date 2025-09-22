@@ -21,7 +21,7 @@ import lombok.Setter;
 @NoArgsConstructor
 @Builder
 @Table(name = "student")
-public class Student  implements Serializable {
+public class Student {
 
 
     // @Schema(hidden = true)

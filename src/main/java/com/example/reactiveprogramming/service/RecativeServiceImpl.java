@@ -19,6 +19,7 @@ public class RecativeServiceImpl implements Reactive {
     @Override
     public void saveDeatils(Student student) {
         reactiveUser.save(student);
+        reactiveUser.save(student).subscribe();
     }
 
     @Override
