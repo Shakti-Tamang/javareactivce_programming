@@ -6,6 +6,8 @@ import org.springframework.data.annotation.Id;
 import org.springframework.data.relational.core.mapping.Column;
 import org.springframework.data.relational.core.mapping.Table;
 
+import com.example.reactiveprogramming.enums.Role;
+
 import io.swagger.v3.oas.annotations.media.Schema;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
@@ -40,6 +42,9 @@ public class Student {
 
     @Column()
     String password;
+
+    
+    private Role role;
 
     
 }
