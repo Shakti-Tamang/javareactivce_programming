@@ -24,13 +24,12 @@ public class ShaktiSchedual {
     }
     
    @Scheduled(fixedRate = 5000)
-public void saveUser() {
+ public void saveUser() {
     Student student = new Student();
     student.setName("shakti");
     student.setEmail("shakti@gmail.com");
     student.setAge(12);
     student.setPassword("hlo");
-
     reactiveUser.save(student).subscribe(s -> 
         log.info("Updated student: " + s.getId())
     );
