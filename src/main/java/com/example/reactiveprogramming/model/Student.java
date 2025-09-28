@@ -44,7 +44,6 @@ public class Student {
     String password;
 
     
-    private Role role;
 
     
 }
