@@ -23,7 +23,7 @@ public class ShaktiSchedual {
         this.reactiveUser = reactiveUser;
     }
     
-   @Scheduled(fixedRate = 5000)
+   @Scheduled(fixedRate = 7000)
  public void saveUser() {
     Student student = new Student();
     student.setName("shakti");
