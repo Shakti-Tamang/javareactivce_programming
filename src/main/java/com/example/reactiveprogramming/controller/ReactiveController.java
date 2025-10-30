@@ -23,6 +23,7 @@ import org.springframework.web.bind.annotation.RequestBody;
 
 @RestController
 @RequestMapping("/saveReactive")
+@Validated
 @RequiredArgsConstructor
 public class ReactiveController   {
     // practice
